@@ -28,4 +28,4 @@ function isPrime(n) {
   return true
 }
 
-console.log(primeFactor(960));
+console.log(primeFactor(16320));
