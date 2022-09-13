@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="one">One</div>
+  <div id="two">Two</div>
+</body>
+<script>
+  const one = document.getElementById("one")
+  one.addEventListener('click', () => {
+    {
+      const two = document.getElementById("two")
+      two.remove()
+    } console.log(two)
+  })
+</script>
+
+</html>
+<!-- 
+  const A = 1 에서 
+  A는 변수이며 1이라는 값을 갖고 있음과 동시에 
+  눈에는 보이지 않지만 memory 주소값을 갖고 있다. 
+
+  const two = ... 에서는 two 엘리먼트 div를 저장하고 있는
+  메모리 주소값을 기억하고 있고
+  two.remove를 통해 눈에는 two div가 제거 되었지만 
+  여전히 two에는 메모리 주소를 기억하고 있기때문에 
+  console.log(two) 에서 로그로 출력되는 것이다. 
+
+  해결법은 const two 에 엘리먼트 div에 바로 저장하지 않고 콜백함수 안에 
+  익명함수를 만드는데 특이하게 화살표함수나 function 키워드를 쓰지않고
+  {}를 씌워 그안에   
+  
+  const two = document.getElementById("two")
+  two.remove()
+
+  를 넣으면 클릭하기 전까지 const two 는 어떤 메모리에도 저장되어지지 않고 있다가
+  클릭한 시점에 위에 함수가 작동하면서 two.remove() 이후에 블록안에서 지역변수로 
+  자동으로 제거된다. 
+
+  그이후에 two의 로그를 찍어보면 나타나지 않는다ㅏ.
+
+ -->
