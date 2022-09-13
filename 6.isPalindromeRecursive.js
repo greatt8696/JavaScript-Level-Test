@@ -20,5 +20,5 @@ function isPalindromeRecursiveHelper(wordArr) {
     return isPalindromeRecursiveHelper(original)
   } else return false
 }
-
+//!
 console.log(isPalindromeRecursive("asd2d2sa"));
